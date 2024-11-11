@@ -56,15 +56,35 @@ def count_characters(text):
     return all_characters
 
 
+def sort_on(dict):
+  '''
+    This is used to sort the dictionary in sort_dictionary to sort by the count of chars
+  '''
+  print(dict)
+  return [1]
+
+
+def sort_dictionary(unsorted_dict, reversed = True):
+  sorted_dict = sorted(unsorted_dict.items(), key=lambda x:x[1], reverse=reversed)
+  converted_dict = dict(sorted_dict)
+  return converted_dict
+
+
 # The main loop
 def main():
    book_path = "books/frankenstien.txt"
    book_data = read_book_from_file(book_path)
-   print(book_data)
    word_count = count_words(book_data)
+   print(f"-- Begin report of '{book_path}' ---")
    print(f"{word_count} words found in the document")
+   print()
+   
    characters = count_characters(book_data)
-   print(f"total characters used in this book: {characters}")
+   sorted_characters = sort_dictionary(characters, reversed=True)
+   
+   for item in sorted_characters:
+     if item.isalpha(): 
+      print(f"The '{item}' character was found '{sorted_characters[item]}' times")   
 
 if __name__ == '__main__':
   main()
