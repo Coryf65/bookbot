@@ -72,19 +72,21 @@ def sort_dictionary(unsorted_dict, reversed = True):
 
 # The main loop
 def main():
-   book_path = "books/frankenstien.txt"
-   book_data = read_book_from_file(book_path)
-   word_count = count_words(book_data)
-   print(f"-- Begin report of '{book_path}' ---")
-   print(f"{word_count} words found in the document")
-   print()
+  book_path = "books/frankenstien.txt"
+  book_data = read_book_from_file(book_path)
+  word_count = count_words(book_data)
+  print(f"-- Begin report of '{book_path}' ---")
+  print(f"{word_count} words found in the document")
+  print()
    
-   characters = count_characters(book_data)
-   sorted_characters = sort_dictionary(characters, reversed=True)
+  characters = count_characters(book_data)
+  sorted_characters = sort_dictionary(characters, reversed=True)
    
-   for item in sorted_characters:
-     if item.isalpha(): 
-      print(f"The '{item}' character was found '{sorted_characters[item]}' times")   
+  for item in sorted_characters:
+    if item.isalpha(): 
+      print(f"The '{item}' character was found '{sorted_characters[item]}' times")
+  
+  print("--- end of report ---")
 
 if __name__ == '__main__':
   main()
