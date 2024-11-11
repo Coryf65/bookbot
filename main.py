@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-# import modules used here -- sys is a very standard one
 import sys
 
 
@@ -21,6 +19,7 @@ def read_book_from_file(path):
   
   return file_contents
 
+
 def count_words(text):
   '''
     Counts the total number of words and returns the counter.
@@ -35,6 +34,7 @@ def count_words(text):
   split = text.split()
   return len(split)
 
+
 def count_characters(text):
     '''
      Counts the total number of characters used and 
@@ -47,24 +47,26 @@ def count_characters(text):
         {'p': 6121, 'r': 20818 }: returns a dictionary with each letter and how many times it occured.
     '''
     all_characters = {}
-
     # need to lood through every character and count
-    for character in text:
-      print(character)
-      all_characters[character] = all_characters[character]   
-      print(all_characters[character]) 
-    return text
+    for character in text.lower():
+      #print(f"char: '{character}' is in the dict '{character in all_characters}")      
+      if character in all_characters:
+        # up by one
+        all_characters[character] = all_characters[character] + 1
+      else:        
+        all_characters[character] = 1      
+    return all_characters
 
 
 # Gather our code in a main() function
 def main():
    book_path = "books/frankenstien.txt"
    book_data = read_book_from_file(book_path)
-   #print(book_data)
+   print(book_data)
    word_count = count_words(book_data)
-   print(f"{word_count} words found in the document")
-   
-   count_characters("cory test one two")
+   print(f"{word_count} words found in the document")   
+   characters = count_characters(book_data)
+   print(f"total characters used in this book: {characters}")
 
 if __name__ == '__main__':
   main()
