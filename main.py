@@ -2,7 +2,6 @@
 import sys
 
 
-# read file and print text
 def read_book_from_file(path):
   '''
 		Reads the contents of a text file (book text) and returns it.
@@ -47,9 +46,8 @@ def count_characters(text):
         {'p': 6121, 'r': 20818 }: returns a dictionary with each letter and how many times it occured.
     '''
     all_characters = {}
-    # need to lood through every character and count
+    # need to loop through every character and count
     for character in text.lower():
-      #print(f"char: '{character}' is in the dict '{character in all_characters}")
       if character in all_characters:
         # up by one
         all_characters[character] += 1
@@ -58,7 +56,7 @@ def count_characters(text):
     return all_characters
 
 
-# Gather our code in a main() function
+# The main loop
 def main():
    book_path = "books/frankenstien.txt"
    book_data = read_book_from_file(book_path)
