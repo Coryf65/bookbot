@@ -56,15 +56,17 @@ def count_characters(text):
     return all_characters
 
 
-def sort_on(dict):
-  '''
-    This is used to sort the dictionary in sort_dictionary to sort by the count of chars
-  '''
-  print(dict)
-  return [1]
-
-
 def sort_dictionary(unsorted_dict, reversed = True):
+  '''
+    Sort a Disctionary by using a lamda.
+    
+    Args:
+      unsorted_dict: The dictionary to sort
+      reversed: True = sorts in descending order, big to small, False = sorts in ascending order, small to big 
+    
+    Returns:
+      A dictionary sorted.
+  '''
   sorted_dict = sorted(unsorted_dict.items(), key=lambda x:x[1], reverse=reversed)
   converted_dict = dict(sorted_dict)
   return converted_dict
