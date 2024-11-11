@@ -6,6 +6,15 @@ import sys
 
 # read file and print text
 def read_book_from_file(path):
+    '''
+    Reads the contents of a text file (book text) and returns it.
+
+    Args:
+        path (string): The path to the file to read.
+
+    Returns:
+        string: all of the text in the given file.
+   '''
     file_contents = ""
 
     with open(path) as f:
@@ -15,6 +24,16 @@ def read_book_from_file(path):
 
 
 def count_words(text):
+   '''
+    Counts the total number of words and returns the counter.
+    uses a space as the delimeter.
+
+    Args:
+        text (string): The text to parse.
+
+    Returns:
+        int: The total number of words counted.
+   '''
    split = text.split()
    return len(split)
    
