@@ -1,5 +1,7 @@
 # bookbot
 
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
+
 BookBot is a course on [Boot.Dev]("https://www.boot.dev/courses/build-bookbot-python")
 
 This Python CLI app takes a book as text and prints the total number of words and chars used as output.
