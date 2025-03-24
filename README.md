@@ -9,3 +9,13 @@ https://github.com/Coryf65/bookbot/blob/main/images/Screenshot%20from%202024-11-
 ![Output to the cli showing all characters in the books and how many times they occurred](https://github.com/Coryf65/bookbot/blob/main/images/Screenshot%20from%202024-11-11%2016-55-28.png?raw=true "Console Output")
 
 Place books text in the books directory and set the path!
+
+Useage
+```cli
+python3 main.py books/frankenstein.txt
+```
+
+Unit testing Run examples
+```cli
+python -m unittest -v tests/tests.py
+```

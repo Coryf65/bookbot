@@ -60,20 +60,33 @@ def sort_dictionary(unsorted_dict, reversed = True):
 
 # The main loop
 def main():
-  book_path = "books/frankenstein.txt"
+  
+  if len(sys.argv) != 2:
+    print('Usage: python3 main.py <path_to_book>')
+    sys.exit(1)
+    
+  
+  #book_path = "books/frankenstein.txt"
+  book_path = sys.argv[1]
+  #print(book_path)
+  
   book_data = read_book_from_file(book_path)
   word_count = get_num_words(book_data)
-    
-  print(f"-- Begin report of '{book_path}' ---")
+  
+  print("============ BOOKBOT ============")
+  #print(f"-- Begin report of '{book_path}' ---")
+  print(f"Analyzing book found at {book_path}...")
+  print("----------- Word Count ----------")
   print(f"{word_count} words found in the document")
-  print()
+  print("--------- Character Count -------")
      
   characters = count_characters(book_data)
   sorted_characters = sort_dictionary(characters, reversed=True)
    
   for item in sorted_characters:
     if item.isalpha(): 
-      print(f"The '{item}' character was found '{sorted_characters[item]}' times")
+      print(f"'{item}: {sorted_characters[item]}'")
+      #print(f"The '{item}' character was found '{sorted_characters[item]}' times")
   
   print("--- end of report ---")
 
