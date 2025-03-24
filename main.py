@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import sys
+from stats import get_num_words
 
 
 def read_book_from_file(path):
@@ -17,21 +18,6 @@ def read_book_from_file(path):
     file_contents = f.read()
   
   return file_contents
-
-
-def count_words(text):
-  '''
-    Counts the total number of words and returns the counter.
-    uses a space as the delimeter.
-
-    Args:
-        text (string): The text to parse.
-
-    Returns:
-        int: The total number of words counted.
-   '''
-  split = text.split()
-  return len(split)
 
 
 def count_characters(text):
@@ -74,13 +60,14 @@ def sort_dictionary(unsorted_dict, reversed = True):
 
 # The main loop
 def main():
-  book_path = "books/frankenstien.txt"
+  book_path = "books/frankenstein.txt"
   book_data = read_book_from_file(book_path)
-  word_count = count_words(book_data)
+  word_count = get_num_words(book_data)
+    
   print(f"-- Begin report of '{book_path}' ---")
   print(f"{word_count} words found in the document")
   print()
-   
+     
   characters = count_characters(book_data)
   sorted_characters = sort_dictionary(characters, reversed=True)
    

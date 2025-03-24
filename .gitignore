@@ -1,4 +1,8 @@
+# bootdev ignores
 /books
 
 # vscode ignores
 .vscode
+
+# python ignores
+__pycache__
